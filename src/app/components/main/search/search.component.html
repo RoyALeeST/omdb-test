@@ -1,0 +1,44 @@
+<div class="search-box">
+    <h2>Search</h2>
+    <form>
+      <div class="user-box">
+        <input [(ngModel)]="searchConfig.title"
+                type="text" 
+                name="title" 
+                required>
+        <label>Title</label>
+      </div>
+      <div class="user-box">
+        <input [(ngModel)]="searchConfig.year"
+                type="number" 
+                name="year" 
+                required="">
+        <label>Year</label>
+      </div>
+      <div class="user-box">
+        <select [(ngModel)]="searchConfig.type"  name="type" id="type-dropdown">
+            <option value="Movie" selected disabled hidden>Type</option>
+            <option value="Movie">Movie</option>
+            <option value="Series">Series</option>
+            <option value="Episode">Episode</option>
+          </select>
+      </div>
+      <div class="user-box">
+        <select [(ngModel)]="searchConfig.plot" name="plot" id="type-dropdown">
+            <option value="Full" selected disabled hidden>Plot</option>
+            <option value="Short">Short</option>
+            <option value="Full">Full</option>
+
+          </select>
+      </div>
+      <a #searchBtn class="search-button">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </a>
+    </form>
+</div>
+
+<app-movie-list [fetchedMovies]="fetchedMovies"></app-movie-list>

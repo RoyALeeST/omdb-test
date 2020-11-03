@@ -1,0 +1,5 @@
+<div class="l-container">
+    <ng-container *ngFor="let movie of fetchedMovies, let i = index">
+        <app-movie-list-item [movie]="movie" [index]="i"></app-movie-list-item>
+    </ng-container>
+</div>
